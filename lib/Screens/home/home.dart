@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/Screens/home/components/places_categoris.dart';
+import 'package:travel_app/Screens/home/components/popular_places.dart';
+import 'package:travel_app/Screens/home/components/recommended.dart';
+import 'package:travel_app/Screens/home/components/recommended_places.dart';
 import 'package:travel_app/components/app_bar.dart';
+import 'package:travel_app/components/bottom_nav_bar.dart';
+import 'package:travel_app/components/hamburger_menu.dart';
+import 'package:travel_app/components/user_avatar.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,16 +16,25 @@ class HomeScreen extends StatelessWidget {
       appBar: buildAppBar(
         context,
         title: 'Discover',
-        leading: IconButton(
-          icon: ClipOval(child: Image.asset("assets/images/menu.png")),
-          onPressed: (){},
-        ),
+        leading: HamburgerMenu(),
         actions: [
-          IconButton(
-            icon: ClipOval(child: Image.asset("assets/images/avatar.png")),
-            onPressed: (){},
-          )
+          UserAvatar()
         ]
+      ),
+      backgroundColor: Colors.white,
+      bottomNavigationBar: BottomNavBar(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            PlacesCategories(),
+
+            PopularPlaces(),
+
+            Recommended(),
+
+            RecommendedPlaces()
+          ],
+        ),
       ),
     );
   }

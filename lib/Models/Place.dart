@@ -8,16 +8,17 @@ class Place {
   final String image;
   final double rating;
 
-Place({
-  @required this.id,
-  @required this.name,
-  @required this.description,
-  @required this.location,
-  @required this.image,
-  @required this.rating
-});
+  Place({
+    @required this.id,
+    @required this.name,
+    @required this.description,
+    @required this.location,
+    @required this.image,
+    @required this.rating,
+  });
 }
 
+// demo places
 
 List<Place> demoPlaces = [
   Place(
@@ -53,4 +54,3 @@ List<Place> demoPlaces = [
     rating: 3
   ),
 ];
-

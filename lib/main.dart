@@ -18,9 +18,8 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: kBackgroundColor,
         textTheme: GoogleFonts.merriweatherTextTheme(Theme.of(context).textTheme),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Welcome(),
+      home: WelcomeScreen(),
     );
   }
 }
